@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1786635137107-1
+      author: Irina.Lovtsova
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_book
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  name: publication_year
+                  type: SMALLINT
+            tableName: book
+

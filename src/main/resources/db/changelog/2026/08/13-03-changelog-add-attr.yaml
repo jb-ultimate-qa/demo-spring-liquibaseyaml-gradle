@@ -1,0 +1,62 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1786635440691-1
+      author: Irina.Lovtsova
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: book_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: authors_id
+                  type: BIGINT
+            tableName: book_authors
+  - changeSet:
+      id: 1786635440691-2
+      author: Irina.Lovtsova
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: age
+                  type: INT
+              - column:
+                  name: city
+                  type: VARCHAR(255)
+              - column:
+                  name: is_alive
+                  type: BOOLEAN
+              - column:
+                  name: year_of_birth
+                  type: INT
+            tableName: author
+  - changeSet:
+      id: 1786635440691-3
+      author: Irina.Lovtsova
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: authors_id
+            baseTableName: book_authors
+            constraintName: fk_booaut_on_author
+            referencedColumnNames: id
+            referencedTableName: author
+  - changeSet:
+      id: 1786635440691-4
+      author: Irina.Lovtsova
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: book_id
+            baseTableName: book_authors
+            constraintName: fk_booaut_on_book
+            referencedColumnNames: id
+            referencedTableName: book
+
