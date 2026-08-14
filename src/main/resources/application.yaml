@@ -3,7 +3,7 @@ spring:
     name: demo-spring-liquibaseyaml-gradle
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/demo1
+    url: jdbc:postgresql://localhost:5432/demo
     username: postgres
     password: postgres
   liquibase:
