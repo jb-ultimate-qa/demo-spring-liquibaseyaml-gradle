@@ -46,6 +46,7 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
+// gradle task using liquibase.properties
 liquibase {
     activities {
         main({
@@ -56,3 +57,18 @@ liquibase {
     }
     runList = 'main'
 }
+
+// gradle task with inline arguments
+//liquibase {
+//    activities {
+//        main {
+//            changelogFile 'src/main/resources/db/changelog/root.yaml'
+//            url 'jdbc:postgresql://localhost:5432/demo'
+//            username 'postgres'
+//            password 'postgres'
+//            driver 'org.postgresql.Driver'
+//            baselineOnMigrate true
+//        }
+//    }
+//    runList = 'main'
+//}
