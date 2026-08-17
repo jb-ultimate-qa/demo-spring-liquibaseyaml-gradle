@@ -8,3 +8,4 @@ spring:
     password: postgres
   liquibase:
     change-log: classpath:/db/changelog/root.yaml
+#    change-log: classpath:/db/changelog/second-root.yaml
